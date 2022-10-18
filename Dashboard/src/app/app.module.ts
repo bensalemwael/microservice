@@ -13,6 +13,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
 import { UsersComponent } from './pages/users/users.component';
+import { AddProductComponent } from './pages/products/add-product/add-product.component';
+import { EditProductComponent } from './pages/products/edit-product/edit-product.component';
+import { ListCategoriesComponent } from './pages/categories/list-categories/list-categories.component';
+import { AddCategoriesComponent } from './pages/categories/add-categories/add-categories.component';
+import { EditCategoriesComponent } from './pages/categories/edit-categories/edit-categories.component';
 
 
 @NgModule({
@@ -30,6 +35,11 @@ import { UsersComponent } from './pages/users/users.component';
     AdminLayoutComponent,
     AuthLayoutComponent,
     UsersComponent,
+    AddProductComponent,
+    EditProductComponent,
+    ListCategoriesComponent,
+    AddCategoriesComponent,
+    EditCategoriesComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]
