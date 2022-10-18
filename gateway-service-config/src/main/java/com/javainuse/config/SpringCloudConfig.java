@@ -36,6 +36,9 @@ public class SpringCloudConfig {
                 .route(r -> r.path("/users/**")
                         .uri("http://localhost:8081/")
                         .id("userModule"))
+                .route(r -> r.path("/auth/**")
+                        .uri("http://localhost:8081/")
+                        .id("authModule"))
 
 //Microservice marketing
                 .route(r -> r.path("/events/**")

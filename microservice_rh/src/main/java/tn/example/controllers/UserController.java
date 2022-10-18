@@ -16,21 +16,21 @@ public class UserController {
     UserRepository userRepository;
 
 
-    @GetMapping("/getall")
-    public List<User> getusers() {
+    @GetMapping("/")
+    public List<User> getUsers() {
         return userRepository.findAll();
     }
 
-    @PostMapping("/add")
+    @PostMapping("/")
     @ResponseBody
-    public User addClient(@RequestBody User c) {
+    public User addUser(@RequestBody User c) {
         User user = userRepository.save(c);
         return user;
     }
 
-    @DeleteMapping("/remove-user/{user-id}")
+    @DeleteMapping("/{user-id}")
     @ResponseBody
-    public void removeClient(@PathVariable("user-id") Long userId) {
+    public void removeUser(@PathVariable("user-id") Long userId) {
         userRepository.deleteById(userId);
     }
 
