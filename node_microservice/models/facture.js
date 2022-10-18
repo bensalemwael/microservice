@@ -5,6 +5,7 @@ var Facture = new Schema(
     {
         dateFacture:String,
         user: String,
+        userMail: String,
         total: Number,
         products: [{
             product: String

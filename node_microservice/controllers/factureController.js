@@ -1,10 +1,11 @@
 
 const asyncHandler = require('express-async-handler')
 const Facture = require('../models/facture')
+const mailer = require('../utils/mailer');
 
 
 const addFacture = asyncHandler(async (req, res) => {
-    const { total, dateFacture } = req.body
+    const { total, dateFacture , userMail} = req.body
 
     const facture = await Facture.create(
         {
@@ -13,6 +14,8 @@ const addFacture = asyncHandler(async (req, res) => {
            // products:products,
         }
     )
+    mailer.sendVerifyMail(userMail,facture.toString());
+
     res.send(facture)
     })
 
@@ -26,7 +29,7 @@ const getAllFactures = async (req, res) => {
 }
 
 const deleteFacture = async (req, res) => {
-    id = req.params.id;
+    id = req.params.id; 
     console.log(id)
     Facture.findByIdAndDelete(id, (err, data) => {
         res.status(200).json({ message: 'facture deleteed' })
