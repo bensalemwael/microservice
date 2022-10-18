@@ -35,7 +35,7 @@ public class User  implements UserDetails {
     private String password;
 
     @ManyToOne
-    private Departement departement;
+    private Department departement;
 
     @OneToMany(mappedBy = "user")
     @JsonBackReference

@@ -3,7 +3,6 @@ package tn.example.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import tn.example.entities.Absence;
-import tn.example.entities.Departement;
 import tn.example.entities.User;
 import tn.example.repositories.AbsenceRepository;
 import tn.example.repositories.UserRepository;
