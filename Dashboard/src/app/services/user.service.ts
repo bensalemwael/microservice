@@ -9,13 +9,8 @@ import { User } from '../models/User';
 })
 export class UserService {
 
-<<<<<<< HEAD
   url = environment.base_URL + "users/"
-  auth = environment.base_URL + "auth/login"
-=======
-  url = environment.base_URL
-  
->>>>>>> master
+  auth = environment.base_URL + "auth/login"  
   constructor(private http: HttpClient) {
 
    }
