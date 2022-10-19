@@ -28,7 +28,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let category of categories;">
+                            <tr *ngFor="let category of products;">
                                 <th scope="row">
                                     <div class="media align-items-center">
                                         <div class="media-body">
@@ -45,7 +45,7 @@
                                             <button class="btn btn-info" (click)="updateCategory(category.id)"> edit</button>
                                         </a>
                                         <button class="btn btn-danger"
-                                            (click)="deleteCategory(category.id)"> delete</button>
+                                            > delete</button>
                                     </div>
                                 </td>
                             </tr>

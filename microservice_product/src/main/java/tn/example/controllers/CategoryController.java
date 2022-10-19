@@ -6,7 +6,6 @@ import tn.example.services.CategoryService;
 
 import java.util.List;
 
-@CrossOrigin(origins = "*", maxAge = 3600)
 
 @RestController
 @RequestMapping("/categories")
