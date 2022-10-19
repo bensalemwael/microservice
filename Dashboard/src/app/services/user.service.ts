@@ -9,7 +9,7 @@ import { User } from '../models/User';
 })
 export class UserService {
 
-  url = environment.microservice_rh
+  url = environment.base_URL
   
   constructor(private http: HttpClient) {
 
