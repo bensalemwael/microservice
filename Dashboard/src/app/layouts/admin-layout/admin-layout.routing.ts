@@ -11,7 +11,7 @@ import { EditProductComponent } from 'src/app/pages/products/edit-product/edit-p
 import { ListCategoriesComponent } from 'src/app/pages/categories/list-categories/list-categories.component';
 import { EditCategoriesComponent } from 'src/app/pages/categories/edit-categories/edit-categories.component';
 import { AddCategoriesComponent } from 'src/app/pages/categories/add-categories/add-categories.component';
-import { ProductsComponent } from 'src/app/pages/products/list-products/products.component';
+import { ListProductComponent } from 'src/app/pages/products/list-product/list-product.component';
 
 export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard',      component: DashboardComponent },
@@ -20,12 +20,13 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'icons',          component: IconsComponent },
     { path: 'maps',           component: MapsComponent },
     { path: 'users',          component: UsersComponent },
-    { path: 'products',       component: ProductsComponent },
     { path: 'add_product',    component: AddProductComponent },
     { path: 'edit_product',   component: EditProductComponent },
     { path: 'categories',     component: ListCategoriesComponent },
     { path: 'edit_category/:id',  component: EditCategoriesComponent },
     { path: 'add_category',   component: AddCategoriesComponent },
+    { path: 'products',       component: ListProductComponent },
+
     
 
 ];

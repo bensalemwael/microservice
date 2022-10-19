@@ -14,12 +14,11 @@
                 <div class="card-header border-0">
                     <h3 class="mb-0">Edit Category</h3>
                 </div>
-                <form #FEditCategory="ngForm" (ngSubmit)="onSubmit()">
+                <form>
                     <div class="row">
                         <div class="col-md-6" style="margin: auto;">
                             <div class="form-group">
-                                <input type="text"    [(ngModel)]="category.name"
-                                class="form-control" id="name" placeholder="Name">
+                                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Name">
                             </div>
                         </div>
                     </div>
@@ -27,7 +26,7 @@
                     <div class="row">
                         <div class="col-md-6" style="margin: auto;">
                             <div class="form-group"   style="display: flex; justify-content: center;" >
-                                <button class="btn btn-success"[disabled]="FEditCategory.invalid">Save</button>
+                                <button type="button" class="btn btn-success">Save</button>
                             </div>
                         </div>
                     </div>

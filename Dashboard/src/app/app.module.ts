@@ -18,6 +18,7 @@ import { EditProductComponent } from './pages/products/edit-product/edit-product
 import { ListCategoriesComponent } from './pages/categories/list-categories/list-categories.component';
 import { AddCategoriesComponent } from './pages/categories/add-categories/add-categories.component';
 import { EditCategoriesComponent } from './pages/categories/edit-categories/edit-categories.component';
+import { ListProductComponent } from './pages/products/list-product/list-product.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { EditCategoriesComponent } from './pages/categories/edit-categories/edit
     ComponentsModule,
     NgbModule,
     RouterModule,
-    AppRoutingModule
+    AppRoutingModule,
+     
   ],
   declarations: [
     AppComponent,
@@ -40,6 +42,7 @@ import { EditCategoriesComponent } from './pages/categories/edit-categories/edit
     ListCategoriesComponent,
     AddCategoriesComponent,
     EditCategoriesComponent,
+    ListProductComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

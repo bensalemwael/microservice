@@ -11,9 +11,9 @@
         <div class="col">
             <div class="card shadow">
                 <div class="card-header border-0">
-                    <h3 class="mb-0">Categories</h3>
-                    <a class="nav-link" routerLink="/add_category">
-                        <button type="button" class="btn btn-success">Add category</button>
+                    <h3 class="mb-0">Products</h3>
+                    <a class="nav-link" routerLink="/add_product">
+                        <button type="button" class="btn btn-success">Add Product</button>
                     </a>
                 </div>
                 <div class="table-responsive">
@@ -21,33 +21,37 @@
 
                         <thead class="thead-light">
                             <tr>
-                                <th scope="col">ID</th>
                                 <th scope="col">Name</th>
+                                <th scope="col">Quantity</th>
+                                <th scope="col">Price</th>
                                 <th scope="col">Action</th>
+
 
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let category of products;">
-                                <th scope="row">
-                                    <div class="media align-items-center">
-                                        <div class="media-body">
-                                            <span class="mb-0 text-sm">{{category.id}}</span>
-                                        </div>
-                                    </div>
-                                </th>
+                            <tr *ngFor="let product of products; let i = index">
+                             
                                 <td>
-                                    {{category.name}}
+                                    {{product.name}}
                                 </td>
                                 <td>
-                                    <div class="text-right">
+                                    {{product.quantity}}
+                                </td>
+                                <td>
+                                    {{product.price}}
+                                </td>
+
+                                <td>
+                                    <div >
                                         <a href="javascript:void(0)" class="mx-2">
-                                            <button class="btn btn-info" (click)="updateCategory(category.id)"> edit</button>
+                                            <button class="btn btn-info" > edit</button>
                                         </a>
                                         <button class="btn btn-danger"
-                                            > delete</button>
+                                           > delete</button>
                                     </div>
                                 </td>
+                            
                             </tr>
                         </tbody>
                     </table>
