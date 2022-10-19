@@ -20,8 +20,6 @@ public class Department {
     private Long DepartementId;
     @Column
     private String NomDepartement;
-    @Column
-    private String AdressDepartement;
 
     @OneToMany(mappedBy = "departement")
     @JsonBackReference

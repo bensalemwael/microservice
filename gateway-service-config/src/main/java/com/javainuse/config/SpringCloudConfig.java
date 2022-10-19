@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
 @Configuration
+
 public class SpringCloudConfig {
 
     @Bean
@@ -31,9 +32,9 @@ public class SpringCloudConfig {
                 .route(r -> r.path("/absences/**")
                         .uri("http://localhost:8081/")
                         .id("absenceModule"))
-                .route(r -> r.path("/departements/**")
+                .route(r -> r.path("/departments/**")
                         .uri("http://localhost:8081/")
-                        .id("departementModule"))
+                        .id("departmentModule"))
                 .route(r -> r.path("/users/**")
                         .uri("http://localhost:8081/")
                         .id("userModule"))

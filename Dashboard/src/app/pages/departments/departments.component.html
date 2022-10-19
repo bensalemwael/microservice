@@ -11,57 +11,46 @@
         <div class="col">
             <div class="card shadow">
                 <div class="card-header border-0">
-                    <h3 class="mb-0">Users</h3>
-                    <a class="nav-link" routerLink="/add_user">
-                        <button type="button" class="btn btn-success">Add User</button>
+                    <h3 class="mb-0">Departments</h3>
+                    <a class="nav-link" routerLink="/add_department">
+                        <button type="button" class="btn btn-success">Add Department</button>
                     </a>
                 </div>
                 <div class="table-responsive">
                     <table class="table align-items-center table-flush">
+
                         <thead class="thead-light">
                             <tr>
-                                <th scope="col">First Name</th>
-                                <th scope="col">Last Name</th>
-                                <th scope="col">Email</th>
-                                <th scope="col">Role</th>
-                                <th scope="col">Department</th>
-                                <th scope="col">actions</th>
+                                <th scope="col">ID</th>
+                                <th scope="col">Name</th>
+                                <th scope="col" class="text-right">Actions</th>
+
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let user of users;">
+                            <tr *ngFor="let department of departments;">
                                 <th scope="row">
                                     <div class="media align-items-center">
                                         <div class="media-body">
-                                            <span class="mb-0 text-sm">{{user.firstName}}</span>
+                                            <span class="mb-0 text-sm">{{department.departementId}}</span>
                                         </div>
                                     </div>
                                 </th>
                                 <td>
-                                    {{user.lastName}}
+                                    {{department.nomDepartement}}
                                 </td>
                                 <td>
-                                    {{user.email}}
-                                </td>
-                                <td>
-                                    {{user.role}}
-                                </td>
-                                <td>
-                                    {{user.department}}
-                                </td>
-                                <td>
-                                    <div class="text-right">
+                                    <div class="text-right" (click)="editDepartment(department.departementId)">
                                         <button class="btn btn-info"> edit
                                         </button>
-                                        <button class="btn btn-danger" (click)="deleteUser(user.userId)">
-                                            delete</button>
+                                        <button class="btn btn-danger"
+                                            (click)="deleteDepartment(department.departementId)"> delete</button>
                                     </div>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-
             </div>
         </div>
     </div>
