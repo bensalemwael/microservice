@@ -9,7 +9,6 @@ import tn.example.repositories.UserRepository;
 
 import java.util.List;
 
-@CrossOrigin(origins = "*", maxAge = 3600)
 
 @RestController
 @RequestMapping("/departments")
@@ -29,7 +28,7 @@ public class DepartmentController {
     @ResponseBody
     public Department addDepartment(@RequestBody Department c) {
         Department department = departmentRepository.save(c);
-        return department;
+        return c;
     }
 
     @DeleteMapping("/{departments-id}")
@@ -71,6 +70,21 @@ public class DepartmentController {
         }
 
         return department;
+    }
+
+    @GetMapping("/{department-id}")
+    public Department getDepartmentById(@PathVariable("department-id") Long departmentId)
+    {
+        return departmentRepository.findById(departmentId).orElse(null);
+    }
+
+    @PutMapping("/{department-id}")
+    public Department updateDepartmentById(@PathVariable("department-id") Long departmentId,@RequestBody Department c)
+    {
+        Department d =  departmentRepository.findById(departmentId).orElse(null);
+        d.setNomDepartement(c.getNomDepartement());
+        departmentRepository.save(d) ;
+        return d ;
     }
 
 

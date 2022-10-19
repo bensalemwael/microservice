@@ -18,6 +18,7 @@ import { EditProductComponent } from './pages/products/edit-product/edit-product
 import { ListCategoriesComponent } from './pages/categories/list-categories/list-categories.component';
 import { AddCategoriesComponent } from './pages/categories/add-categories/add-categories.component';
 import { EditCategoriesComponent } from './pages/categories/edit-categories/edit-categories.component';
+<<<<<<< HEAD
 import { DepartmentsComponent } from './pages/departments/departments.component';
 import { AddDepartmentComponent } from './pages/departments/add-department/add-department.component';
 import { EditDepartmentComponent } from './pages/departments/edit-department/edit-department.component';
@@ -25,6 +26,9 @@ import { AbsencesComponent } from './pages/absences/absences.component';
 import { AddUserComponent } from './pages/users/add-user/add-user.component';
 import { EditUserComponent } from './pages/users/edit-user/edit-user.component';
 import { AddAbsenceComponent } from './pages/absences/add-absence/add-absence.component';
+=======
+import { ListProductComponent } from './pages/products/list-product/list-product.component';
+>>>>>>> master
 
 
 @NgModule({
@@ -36,7 +40,11 @@ import { AddAbsenceComponent } from './pages/absences/add-absence/add-absence.co
     NgbModule,
     RouterModule,
     AppRoutingModule,
+<<<<<<< HEAD
     ReactiveFormsModule
+=======
+     
+>>>>>>> master
   ],
   declarations: [
     AppComponent,
@@ -48,6 +56,7 @@ import { AddAbsenceComponent } from './pages/absences/add-absence/add-absence.co
     ListCategoriesComponent,
     AddCategoriesComponent,
     EditCategoriesComponent,
+<<<<<<< HEAD
     DepartmentsComponent,
     AddDepartmentComponent,
     EditDepartmentComponent,
@@ -55,6 +64,9 @@ import { AddAbsenceComponent } from './pages/absences/add-absence/add-absence.co
     AddUserComponent,
     EditUserComponent,
     AddAbsenceComponent,
+=======
+    ListProductComponent
+>>>>>>> master
   ],
   providers: [],
   bootstrap: [AppComponent]
