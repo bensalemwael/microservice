@@ -1,6 +1,6 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
@@ -18,6 +18,13 @@ import { EditProductComponent } from './pages/products/edit-product/edit-product
 import { ListCategoriesComponent } from './pages/categories/list-categories/list-categories.component';
 import { AddCategoriesComponent } from './pages/categories/add-categories/add-categories.component';
 import { EditCategoriesComponent } from './pages/categories/edit-categories/edit-categories.component';
+import { DepartmentsComponent } from './pages/departments/departments.component';
+import { AddDepartmentComponent } from './pages/departments/add-department/add-department.component';
+import { EditDepartmentComponent } from './pages/departments/edit-department/edit-department.component';
+import { AbsencesComponent } from './pages/absences/absences.component';
+import { AddUserComponent } from './pages/users/add-user/add-user.component';
+import { EditUserComponent } from './pages/users/edit-user/edit-user.component';
+import { AddAbsenceComponent } from './pages/absences/add-absence/add-absence.component';
 
 
 @NgModule({
@@ -28,7 +35,8 @@ import { EditCategoriesComponent } from './pages/categories/edit-categories/edit
     ComponentsModule,
     NgbModule,
     RouterModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   declarations: [
     AppComponent,
@@ -40,6 +48,13 @@ import { EditCategoriesComponent } from './pages/categories/edit-categories/edit
     ListCategoriesComponent,
     AddCategoriesComponent,
     EditCategoriesComponent,
+    DepartmentsComponent,
+    AddDepartmentComponent,
+    EditDepartmentComponent,
+    AbsencesComponent,
+    AddUserComponent,
+    EditUserComponent,
+    AddAbsenceComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -9,13 +9,23 @@ import { User } from '../models/User';
 })
 export class UserService {
 
-  url = environment.microservice_rh
-  
+  url = environment.base_URL + "users/"
+  auth = environment.base_URL + "auth/login"
   constructor(private http: HttpClient) {
 
    }
 
   getUsers() : Observable<User[]> {
-    return this.http.get<User[]>(this.url + '/getall');
+    return this.http.get<User[]>(this.url);
   }
+
+  deleteUser(user_id:number) {
+    return this.http.delete(this.url+user_id).subscribe()
+  }
+
+  login(email:string,password:string) {
+     return this.http.post(this.auth,{"email" : email , "password" : password})
+  }
+
+
 }
