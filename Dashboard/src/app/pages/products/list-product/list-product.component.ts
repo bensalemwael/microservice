@@ -9,8 +9,11 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class ListProductComponent implements OnInit {
 
-  constructor(private productService: ProductService, private route: Router) { }
   products: Product[]
+  searchText;
+
+
+  constructor(private productService: ProductService, private route: Router) { }
 
   ngOnInit(): void {
 
@@ -39,4 +42,5 @@ export class ListProductComponent implements OnInit {
     this.route.navigate(['/edit_product/' + id]);
   }
 
+ 
 }
