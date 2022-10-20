@@ -10,6 +10,8 @@ import { PartnerService } from 'src/app/services/partner.service';
 })
 export class PartnersComponent implements OnInit {
   partners:Partner[] = []
+  searchText;
+
 
   constructor(private partnerService : PartnerService , private router: Router) { }
 
