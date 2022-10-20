@@ -26,7 +26,9 @@ public class ProductService implements IProductService {
     }
 
     @Override
-    public Product update(Product product) {
+    public Product update(Product product, Long categoryId) {
+        Category category = categoryRepository.findById(categoryId).orElse(null);
+        product.setCategory(category);
         return productRepository.save(product);
     }
 

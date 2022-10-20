@@ -14,46 +14,46 @@
                 <div class="card-header border-0">
                     <h3 class="mb-0">Add Product</h3>
                 </div>
-                <form>
+                <form #FAddCategory="ngForm" (ngSubmit)="onSubmit()">
                     <div class="row">
                         <div class="col-md-6" style="margin: auto;">
                             <div class="form-group">
-                                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Name">
+                                <input type="text" class="form-control" id="name" placeholder="Name"
+                                [(ngModel)]="product.name" name="name" required #fn="ngModel">
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6" style="margin: auto;">
                             <div class="form-group">
-                                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Quantity">
+                                <input type="number" class="form-control" id="quantity" placeholder="Quantity"
+                                [(ngModel)]="product.quantity" name="quantity" required #fn="ngModel">
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6" style="margin: auto;">
                             <div class="form-group">
-                                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Size">
+                                <input type="number" class="form-control" id="price" placeholder="Price"
+                                [(ngModel)]="product.price" name="price" required #fn="ngModel">
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6" style="margin: auto;">
-                            <div class="form-group">
-                                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Price">
-                            </div>
+                            <label>Category </label>
+                            <select name="category" [(ngModel)]="categoryId" #fn="ngModel">
+                                <option value="" selected  name="categoryId"></option>
+                                <option *ngFor="let category of categories" [value]="category.id">
+                                    {{category.name}}
+                                </option>
+                            </select>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6" style="margin: auto;">
-                            <div class="form-group">
-                                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Category">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6" style="margin: auto;">
-                            <div class="form-group"   style="display: flex; justify-content: center;" >
-                                <button type="button" class="btn btn-success">Save</button>
+                            <div class="form-group" style="display: flex; justify-content: center;">
+                                <button class="btn btn-success"  [disabled]="FAddCategory.invalid">Save</button>
                             </div>
                         </div>
                     </div>

@@ -23,7 +23,8 @@ export class EditCategoriesComponent implements OnInit {
   }
 
   onSubmit(){
-    this.categoryService.addCategory(this.category).subscribe();
-    this.router.navigate(['/categories']);
+    this.categoryService.updateCategory(this.category).subscribe(data =>
+      this.router.navigate(['/categories'])
+      );
   }
 }

@@ -26,6 +26,7 @@ import { AddUserComponent } from './pages/users/add-user/add-user.component';
 import { EditUserComponent } from './pages/users/edit-user/edit-user.component';
 import { AddAbsenceComponent } from './pages/absences/add-absence/add-absence.component';
 import { ListProductComponent } from './pages/products/list-product/list-product.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { ListProductComponent } from './pages/products/list-product/list-product
     NgbModule,
     RouterModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    Ng2SearchPipeModule
      
   ],
   declarations: [

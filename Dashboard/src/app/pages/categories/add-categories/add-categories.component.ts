@@ -10,18 +10,18 @@ import { CategoryService } from 'src/app/services/category.service';
 })
 export class AddCategoriesComponent implements OnInit {
 
-  category : Category = new Category() ;
+  category: Category = new Category();
 
-  constructor(private categoryService : CategoryService ,   private route: Router   ) { }
+  constructor(private categoryService: CategoryService, private route: Router) { }
 
   ngOnInit(): void {
   }
 
   onSubmit() {
-    this.categoryService.addCategory(this.category).subscribe();
-    this.goToCategories();
+    this.categoryService.addCategory(this.category).subscribe(data =>
+      this.goToCategories()
 
-  
+    );
   };
 
   goToCategories() {
@@ -29,7 +29,7 @@ export class AddCategoriesComponent implements OnInit {
   }
 
 
-  
 
- 
+
+
 }

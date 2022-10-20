@@ -31,7 +31,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'add_department', component: AddDepartmentComponent },
     { path: 'edit_department/:department_id', component: EditDepartmentComponent },
     { path: 'add_product',    component: AddProductComponent },
-    { path: 'edit_product',   component: EditProductComponent },
+    { path: 'edit_product/:id',   component: EditProductComponent },
     { path: 'categories',     component: ListCategoriesComponent },
     { path: 'edit_category/:id',  component: EditCategoriesComponent },
     { path: 'add_category',   component: AddCategoriesComponent },
