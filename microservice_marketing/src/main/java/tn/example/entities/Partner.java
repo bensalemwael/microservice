@@ -25,6 +25,8 @@ public class Partner {
     private Float budget ;
     @Column
     private Float percentage ;
+
+    @Temporal(TemporalType.DATE)
     @Column
     private Date starting_date ;
 
