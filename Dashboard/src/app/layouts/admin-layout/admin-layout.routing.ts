@@ -17,6 +17,12 @@ import { EditDepartmentComponent } from 'src/app/pages/departments/edit-departme
 import { AbsencesComponent } from 'src/app/pages/absences/absences.component';
 import { AddAbsenceComponent } from 'src/app/pages/absences/add-absence/add-absence.component';
 import { ListProductComponent } from 'src/app/pages/products/list-product/list-product.component';
+import { EventsComponent } from 'src/app/pages/events/events.component';
+import { AddEventComponent } from 'src/app/pages/events/add-event/add-event.component';
+import { EditEventComponent } from 'src/app/pages/events/edit-event/edit-event.component';
+import { PartnersComponent } from 'src/app/pages/partners/partners.component';
+import { AddPartnerComponent } from 'src/app/pages/partners/add-partner/add-partner.component';
+import { EditPartnerComponent } from 'src/app/pages/partners/edit-partner/edit-partner.component';
 
 export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard',      component: DashboardComponent },
@@ -30,6 +36,15 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'departments',    component: DepartmentsComponent },
     { path: 'add_department', component: AddDepartmentComponent },
     { path: 'edit_department/:department_id', component: EditDepartmentComponent },
+
+    { path: 'events',    component: EventsComponent },
+    { path: 'add_event',    component: AddEventComponent },
+    { path: 'edit_event/:event_id',    component: EditEventComponent },
+
+    { path: 'partners',    component: PartnersComponent },
+    { path: 'add_partner',    component: AddPartnerComponent },
+    { path: 'edit_partner/:partner_id',    component: EditPartnerComponent },
+
     { path: 'add_product',    component: AddProductComponent },
     { path: 'edit_product/:id',   component: EditProductComponent },
     { path: 'categories',     component: ListCategoriesComponent },
