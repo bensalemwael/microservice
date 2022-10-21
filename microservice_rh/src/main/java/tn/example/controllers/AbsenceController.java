@@ -3,9 +3,9 @@ package tn.example.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import tn.example.entities.Absence;
-import tn.example.entities.User;
+import tn.example.externMicroservices.models.User;
+import tn.example.externMicroservices.services.UserServiceClient;
 import tn.example.repositories.AbsenceRepository;
-import tn.example.repositories.UserRepository;
 
 import java.util.List;
 
@@ -17,44 +17,38 @@ public class AbsenceController {
 
     @Autowired
     AbsenceRepository absenceRepository ;
-    @Autowired
-    UserRepository userRepository;
+   UserServiceClient userServiceClient;
 
-    @GetMapping("/")
-    @ResponseBody
-    public List<Absence> getAbsenses()
-    {
-        return absenceRepository.findAll();
+    public AbsenceController( UserServiceClient userServiceClient){
+        this.userServiceClient = userServiceClient;
     }
+
+
 
     @GetMapping("/{user_id}")
     @ResponseBody
     public List<Absence> getAbsencePerUser(@PathVariable("user_id") Long userId){
-        User user=userRepository.findById(userId).orElse(null);
-        return user.getAbsences();
+        User user=userServiceClient.getUserById(userId);
+        return absenceRepository.findAllByuserId(userId);
     }
 
     @PostMapping("/{user_id}")
     @ResponseBody
-    public User addAbsenceToUser(@PathVariable("user_id") Long userId , @RequestBody Absence absence){
-        Absence ab = absenceRepository.save(absence) ;
-        User user=userRepository.findById(userId).orElse(null);
-        user.getAbsences().add(ab);
-        userRepository.save(user);
-        ab.setUser(user);
-        absenceRepository.save(absence);
-        return user;
+    public Absence addAbsenceToUser(@PathVariable("user_id") Long userId , @RequestBody Absence absence){
+        User user=userServiceClient.getUserById(userId);
+        if(user!=null){
+            absence.setUserId(user.getUserId());
+            absenceRepository.save(absence) ;
+            return absence;
+        }
+        return null;
     }
-
     @DeleteMapping("/{user_id}/{absence_id}")
     @ResponseBody
-    public User removeAbsence(@PathVariable("user_id") Long userId , @PathVariable("absence_id") Long absenceId){
-        User user=userRepository.findById(userId).orElse(null);
-        Absence absence = absenceRepository.findById(absenceId).orElse(null);
-        user.getAbsences().remove(absence);
-        absenceRepository.delete(absence);
-        userRepository.save(user);
-        return user;
+    public String removeAbsence(@PathVariable("user_id") Long userId , @PathVariable("absence_id") Long absenceId){
+        User user=userServiceClient.getUserById(userId);
+        absenceRepository.deleteAbsencesByUserid(user.getUserId());
+        return "absence delete from the specified user";
     }
 
 }

@@ -28,24 +28,31 @@ public class AuthApi {
     UserRepository userRepository;
 
     @PostMapping("/auth/signup")
-    public ResponseEntity<?> signup(@RequestBody @Valid AuthRequest request) {
+    public ResponseEntity<?> signup(@RequestBody @Valid AuthRequestSignup request) {
+        ResponseEntity<?> response = null;
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         String password = passwordEncoder.encode(request.getPassword());
-        User newUser = new User(request.getEmail(), password);
-        User savedUser = userRepository.save(newUser);
-        return ResponseEntity.ok().body(savedUser);
+        if (userRepository.findByEmail(request.getEmail()).isPresent()==false) {
+            User newUser = new User(request.getFirstName(), request.getLastName(), request.getEmail(), request.getRole(), password);
+            User savedUser = userRepository.save(newUser);
+            response=ResponseEntity.ok().body(savedUser);
+        }
+        else {
+            System.out.println("here");
+            response= ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("user already exists");
+        }
+        return response;
     }
 
 
     @PostMapping("/auth/login")
-    public ResponseEntity<?> login(@RequestBody @Valid AuthRequest request) {
+    public ResponseEntity<?> login(@RequestBody @Valid AuthRequestLogin request) {
         try {
             Authentication authentication = authManager.authenticate(
                     new UsernamePasswordAuthenticationToken(
                             request.getEmail(), request.getPassword())
             );
             User user = (User) authentication.getPrincipal();
-            System.out.println(user);
             String accessToken = jwtUtil.generateAccessToken(user);
             System.out.println(accessToken);
             AuthResponse response = new AuthResponse(user.getEmail(), accessToken);
