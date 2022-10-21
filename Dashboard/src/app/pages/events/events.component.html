@@ -1,0 +1,64 @@
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+    <div class="container-fluid">
+        <div class="header-body">
+        </div>
+    </div>
+</div>
+<!-- Page content -->
+<div class="container-fluid mt--7">
+    <!-- Table -->
+    <div class="row">
+        <div class="col">
+            <div class="card shadow">
+                <div class="card-header border-0">
+                    <h3 class="mb-0">Events</h3>
+                    <a class="nav-link" routerLink="/add_event">
+                        <button type="button" class="btn btn-success">Add Event</button>
+                    </a>
+                </div>
+                <div class="table-responsive">
+                    <table class="table align-items-center table-flush">
+
+                        <thead class="thead-light">
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Starting date</th>
+                                <th scope="col">Ending date</th>
+                                <th scope="col" class="text-right">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let event of events;">
+                                <th scope="row">
+                                    <div class="media align-items-center">
+                                        <div class="media-body">
+                                            <span class="mb-0 text-sm">{{event.eventId}}</span>
+                                        </div>
+                                    </div>
+                                </th>
+                                <td>
+                                    {{event.name}}
+                                </td>
+                                <td>
+                                    {{event.starting_date}}
+                                </td>
+                                <td>
+                                    {{event.ending_date}}
+                                </td>
+                                <td>
+                                    <div class="text-right">
+                                        <button class="btn btn-info" (click)="updateEvent(event.eventId)"> edit
+                                        </button>
+                                        <button class="btn btn-danger" (click)="deleteEvent(event.eventId)">
+                                            delete</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

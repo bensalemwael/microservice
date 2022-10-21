@@ -37,10 +37,11 @@ public class ProductController {
         productService.delete(productId);
     }
 
-    @PutMapping("/")
+    @PutMapping("/{category_id}")
     @ResponseBody
-    public Product updateProduct(@RequestBody Product product) {
-        return productService.update(product) ;
+    public Product updateProduct(@RequestBody Product product,@PathVariable("category_id") Long categoryId) {
+
+        return productService.update(product,categoryId) ;
     }
 
     @GetMapping("/category/{nameCategory}")

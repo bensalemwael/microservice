@@ -18,10 +18,15 @@ public class Event {
     @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY )
     private Long eventId;
+
     @Column
     private String name;
+
+    @Temporal(TemporalType.DATE)
     @Column
     private Date starting_date;
+
+    @Temporal(TemporalType.DATE)
     @Column
     private Date ending_date;
 
