@@ -1,6 +1,8 @@
 server:
   port : 8888
 spring:
+  application:
+    name: "Gateway"
   cloud:
     gateway:
       default-filters:
@@ -12,3 +14,13 @@ spring:
             allowed-methods: "*"
             allowed-headers: "*"
             allow-credentials: true
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://registry:8761/eureka/
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    serviceUrl:
+      defaultZone: http://registry:8761/eureka/

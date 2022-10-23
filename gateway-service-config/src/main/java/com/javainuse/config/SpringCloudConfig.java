@@ -15,42 +15,42 @@ public class SpringCloudConfig {
         return builder.routes()
 
 //Microservice auth
-                .route(r -> r.path("/users/**")
-                        .uri("http://localhost:8085/")
-                        .id("userModule"))
-                .route(r -> r.path("/auth/**")
-                        .uri("http://localhost:8085/")
-                        .id("authModule"))
-
-//Microservice rh
-                .route(r -> r.path("/absences/**")
-                        .uri("http://localhost:8081/")
-                        .id("absenceModule"))
-                .route(r -> r.path("/departments/**")
-                        .uri("http://localhost:8081/")
-                        .id("departmentModule"))
+//                .route(r -> r.path("/users/**")
+//                        .uri("http://localhost:8085/")
+//                        .id("userModule"))
+//                .route(r -> r.path("/auth/**")
+//                        .uri("http://localhost:8085/")
+//                        .id("authModule"))
+//
+////Microservice rh
+//                .route(r -> r.path("/absences/**")
+//                        .uri("http://localhost:8081/")
+//                        .id("absenceModule"))
+//                .route(r -> r.path("/departments/**")
+//                        .uri("http://localhost:8081/")
+//                        .id("departmentModule"))
 
 //Micro-service product
                 .route(r -> r.path("/products/**")
-                        .uri("http://localhost:8082/")
+                        .uri("http://product:8082/")
                         .id("productModule"))
                 .route(r -> r.path("/categories/**")
-                        .uri("http://localhost:8082/")
+                        .uri("http://product:8082/")
                         .id("categoryModule"))
                 .route(r -> r.path("/materials/**")
-                        .uri("http://localhost:8082/")
+                        .uri("http://product:8082/")
                         .id("materialModule"))
                 .route(r -> r.path("/vendors/**")
-                        .uri("http://localhost:8082/")
+                        .uri("http://product:8082/")
                         .id("vendorModule"))
 
 //Microservice marketing
-                .route(r -> r.path("/events/**")
-                        .uri("http://localhost:8083/")
-                        .id("eventModule"))
-                .route(r -> r.path("/partners/**")
-                        .uri("http://localhost:8083/")
-                        .id("partnerModule"))
+//                .route(r -> r.path("/events/**")
+//                        .uri("http://localhost:8083/")
+//                        .id("eventModule"))
+//                .route(r -> r.path("/partners/**")
+//                        .uri("http://localhost:8083/")
+//                        .id("partnerModule"))
                .build();
     }
 

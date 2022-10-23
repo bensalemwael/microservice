@@ -1,0 +1,34 @@
+version: "3.9"
+services:
+  registry:
+    container_name: Eureka_Server
+    build: service-registry
+    ports:
+      - 8761:8761
+    image: "registry"
+  product:
+    container_name: Microservice_Product
+    build: microservice_product
+    restart: always
+    ports:
+      - 8082:8082
+    depends_on:
+      - mysqldb
+  mysqldb:
+    container_name: Mysql_Product
+    image: "mysql:latest"
+    # restart: always
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_DATABASE: erp_product
+      MYSQL_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: root
+  gateway:
+    container_name: Gateway
+    build: gateway-service-config
+    ports:
+      - 8888:8888
+    image: "gateway"    
+    depends_on:
+      - product
