@@ -18,7 +18,8 @@ public class Absence {
     private Long AbsenceId;
     @Column
     private String date;
-
-    @ManyToOne
-    private User user;
+    @Column
+    private String cause;
+    @Column
+    private Long userId;
 }

@@ -13,7 +13,23 @@ public class SpringCloudConfig {
     @Bean
     public RouteLocator gatewayRoutes(RouteLocatorBuilder builder) {
         return builder.routes()
-        		
+
+//Microservice auth
+                .route(r -> r.path("/users/**")
+                        .uri("http://localhost:8085/")
+                        .id("userModule"))
+                .route(r -> r.path("/auth/**")
+                        .uri("http://localhost:8085/")
+                        .id("authModule"))
+
+//Microservice rh
+                .route(r -> r.path("/absences/**")
+                        .uri("http://localhost:8081/")
+                        .id("absenceModule"))
+                .route(r -> r.path("/departments/**")
+                        .uri("http://localhost:8081/")
+                        .id("departmentModule"))
+
 //Micro-service product
                 .route(r -> r.path("/products/**")
                         .uri("http://localhost:8082/")
@@ -27,20 +43,6 @@ public class SpringCloudConfig {
                 .route(r -> r.path("/vendors/**")
                         .uri("http://localhost:8082/")
                         .id("vendorModule"))
-
-//Microservice rh
-                .route(r -> r.path("/absences/**")
-                        .uri("http://localhost:8081/")
-                        .id("absenceModule"))
-                .route(r -> r.path("/departments/**")
-                        .uri("http://localhost:8081/")
-                        .id("departmentModule"))
-                .route(r -> r.path("/users/**")
-                        .uri("http://localhost:8081/")
-                        .id("userModule"))
-                .route(r -> r.path("/auth/**")
-                        .uri("http://localhost:8081/")
-                        .id("authModule"))
 
 //Microservice marketing
                 .route(r -> r.path("/events/**")

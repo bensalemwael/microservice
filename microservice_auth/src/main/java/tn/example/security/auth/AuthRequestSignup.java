@@ -1,11 +1,15 @@
 package tn.example.security.auth;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.validator.constraints.Length;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 
-public class AuthRequest {
+@Getter
+@Setter
+public class AuthRequestSignup {
     @NotNull
     @Email
     @Length(min = 5, max = 50)
@@ -14,21 +18,12 @@ public class AuthRequest {
     @NotNull @Length(min = 5, max = 10)
     private String password;
 
-    public String getEmail() {
-        return email;
-    }
+    @NotNull
+    private String firstName;
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
+    @NotNull
+    private String lastName;
+    @NotNull
+    private String role;
 
 }

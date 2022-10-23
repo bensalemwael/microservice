@@ -1,13 +1,11 @@
 package tn.example.entities;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Getter
 @AllArgsConstructor
@@ -17,12 +15,10 @@ import java.util.List;
 public class Department {
     @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY )
-    private Long DepartementId;
+    private Long departmentId;
     @Column
-    private String NomDepartement;
+    private String departmentName;
 
-    @OneToMany(mappedBy = "departement")
-    @JsonBackReference
-    private List<User> users;
+
 
 }

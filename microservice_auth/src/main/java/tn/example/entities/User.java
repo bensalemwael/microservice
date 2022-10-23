@@ -9,6 +9,8 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Null;
 import java.util.Collection;
 import java.util.List;
 
@@ -34,33 +36,25 @@ public class User  implements UserDetails {
     @Column
     private String password;
 
-    @ManyToOne
-    private Department departement;
+    @Column
+    private Long departementid;
 
-    @OneToMany(mappedBy = "user")
-    @JsonBackReference
-    private List<Absence> absences;
 
     public User(String email, String password) {
         this.email = email;
         this.password = password;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
+    public User(String firstName, String lastName, String email, String role, String password) {
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
+        this.role = role;
         this.password = password;
+
     }
+
+
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
