@@ -1,0 +1,63 @@
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+    <div class="container-fluid">
+        <div class="header-body">
+        </div>
+    </div>
+</div>
+
+<!-- Page content -->
+<div class="container-fluid mt--7">
+    <!-- Table -->
+    <div class="row">
+        <div class="col">
+            <div class="card shadow">
+                <div class="card-header border-0">
+                    <h3 class="mb-0">Add Vendor</h3>
+                </div>
+                <form #FAddVendor="ngForm" (ngSubmit)="onSubmit()">
+                    <div class="row">
+                        <div class="col-md-6" style="margin: auto;">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="name" placeholder="firstName"
+                                    [(ngModel)]="vendor.firstName" name="firstName" required #fn="ngModel">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6" style="margin: auto;">
+                            <div class="form-group">
+                                <input type="number" class="form-control" id="quantity" placeholder="lastName"
+                                    [(ngModel)]="vendor.lastName" name="lastName" required #fn="ngModel">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6" style="margin: auto;">
+                            <div class="form-group">
+                                <input type="number" class="form-control" id="price" placeholder="email"
+                                    [(ngModel)]="vendor.email" name="email" required #fn="ngModel">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6" style="margin: auto;">
+                            <div class="form-group">
+                                <input type="number" class="form-control" id="price" placeholder="location"
+                                    [(ngModel)]="vendor.location" name="location" required #fn="ngModel">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6" style="margin: auto;">
+                            <div class="form-group" style="display: flex; justify-content: center;">
+                                <button class="btn btn-success" [disabled]="FAddVendor.invalid">Save</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
