@@ -15,20 +15,20 @@ public class SpringCloudConfig {
         return builder.routes()
 
 //Microservice auth
-//                .route(r -> r.path("/users/**")
-//                        .uri("http://localhost:8085/")
-//                        .id("userModule"))
-//                .route(r -> r.path("/auth/**")
-//                        .uri("http://localhost:8085/")
-//                        .id("authModule"))
+                .route(r -> r.path("/users/**")
+                        .uri("http://auth:8085/")
+                        .id("userModule"))
+                .route(r -> r.path("/auth/**")
+                        .uri("http://auth:8085/")
+                        .id("authModule"))
 //
 ////Microservice rh
-//                .route(r -> r.path("/absences/**")
-//                        .uri("http://localhost:8081/")
-//                        .id("absenceModule"))
-//                .route(r -> r.path("/departments/**")
-//                        .uri("http://localhost:8081/")
-//                        .id("departmentModule"))
+                .route(r -> r.path("/absences/**")
+                        .uri("http://rh:8081/")
+                        .id("absenceModule"))
+                .route(r -> r.path("/departments/**")
+                        .uri("http://rh:8081/")
+                        .id("departmentModule"))
 
 //Micro-service product
                 .route(r -> r.path("/products/**")
@@ -45,13 +45,18 @@ public class SpringCloudConfig {
                         .id("vendorModule"))
 
 //Microservice marketing
-//                .route(r -> r.path("/events/**")
-//                        .uri("http://localhost:8083/")
-//                        .id("eventModule"))
-//                .route(r -> r.path("/partners/**")
-//                        .uri("http://localhost:8083/")
-//                        .id("partnerModule"))
-               .build();
+                .route(r -> r.path("/events/**")
+                        .uri("http://marketing:8083/")
+                        .id("eventModule"))
+                .route(r -> r.path("/partners/**")
+                        .uri("http://marketing:8083/")
+                        .id("partnerModule"))
+
+//Microservice facture
+                .route(r -> r.path("/factures/**")
+                        .uri("http://facture:3000/")
+                        .id("factureModule"))
+                .build();
     }
 
 }

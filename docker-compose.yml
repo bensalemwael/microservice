@@ -24,11 +24,74 @@ services:
       MYSQL_DATABASE: erp_product
       MYSQL_PASSWORD: root
       MYSQL_ROOT_PASSWORD: root
+  auth:
+    container_name: Microservice_Auth
+    build: microservice_auth
+    restart: always
+    ports:
+      - 8085:8085
+    depends_on:
+      - mysqldb_auth
+  mysqldb_auth:
+    container_name: Mysql_Auth
+    image: "mysql:latest"
+    # restart: always
+    ports:
+      - 3307:3307
+    environment:
+      MYSQL_DATABASE: erp_auth
+      MYSQL_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_TCP_PORT: 3307
+  marketing:
+    container_name: Microservice_Marketing
+    build: microservice_marketing
+    restart: always
+    ports:
+      - 8083:8083
+    depends_on:
+      - mysqldb_marketing
+  mysqldb_marketing:
+    container_name: Mysql_Marketing
+    image: "mysql:latest"
+    # restart: always
+    ports:
+      - 3308:3308
+    environment:
+      MYSQL_DATABASE: erp_marketing
+      MYSQL_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_TCP_PORT: 3308
+  rh:
+    container_name: Microservice_Rh
+    build: microservice_rh
+    restart: always
+    ports:
+      - 8081:8081
+    depends_on:
+      - mysqldb_rh
+  mysqldb_rh:
+    container_name: Mysql_Rh
+    image: "mysql:latest"
+    # restart: always
+    ports:
+      - 3309:3309
+    environment:
+      MYSQL_DATABASE: erp_rh
+      MYSQL_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_TCP_PORT: 3309
+  facture:
+    container_name: Microservice_Facture_Node
+    build: node_microservice
+    restart: always
+    ports:
+      - 3000:3000
   gateway:
     container_name: Gateway
     build: gateway-service-config
     ports:
       - 8888:8888
     image: "gateway"    
-    depends_on:
-      - product
+    # depends_on:
+    #   - product

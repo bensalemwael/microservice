@@ -9,7 +9,6 @@ import tn.example.repositories.AbsenceRepository;
 
 import java.util.List;
 
-@CrossOrigin(origins = "*", maxAge = 3600)
 
 @RestController
 @RequestMapping("/absences")
