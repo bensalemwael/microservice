@@ -11,6 +11,8 @@ export class UserService {
 
   url = environment.base_URL + "users/"
   auth = environment.base_URL + "auth/login"  
+  authsignup = environment.base_URL + "auth/signup"  
+
   constructor(private http: HttpClient) {
 
    }
@@ -27,5 +29,8 @@ export class UserService {
      return this.http.post(this.auth,{"email" : email , "password" : password})
   }
 
+  addUser(user: User): Observable<User> {
+    return this.http.post<User>(this.authsignup, user)
+  }
 
 }

@@ -37,11 +37,13 @@ public class SpringCloudConfig {
                 .route(r -> r.path("/categories/**")
                         .uri("http://product:8082/")
                         .id("categoryModule"))
+
+//Micro-service-vendor
                 .route(r -> r.path("/materials/**")
-                        .uri("http://product:8082/")
+                        .uri("http://vendor:8087/")
                         .id("materialModule"))
                 .route(r -> r.path("/vendors/**")
-                        .uri("http://product:8082/")
+                        .uri("http://vendor:8087/")
                         .id("vendorModule"))
 
 //Microservice marketing

@@ -19,11 +19,13 @@ export class AddDepartmentComponent implements OnInit {
   }
 
   addDepartment() {
+    console.log( this.form.value)
     if (this.form.valid)
     {
       let department:Department = this.form.value;
-      this.departmentService.addDepartment(department)
-      this.router.navigate(['/departments'])
+     
+       this.departmentService.addDepartment(department)
+      this.router.navigate(['/departments']) 
     }
     
     
@@ -32,7 +34,7 @@ export class AddDepartmentComponent implements OnInit {
 
   createForm() {
     this.form = this.fb.group({
-       nomDepartement: ['', Validators.required ],
+      departmentName: ['', Validators.required ],
     });
   }
 }

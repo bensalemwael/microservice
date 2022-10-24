@@ -3,12 +3,22 @@ package tn.example.security.auth;
 public class AuthResponse {
     private String email;
     private String accessToken;
+    private String role;
 
     public AuthResponse() { }
-
-    public AuthResponse(String email, String accessToken) {
+    public AuthResponse(String email, String accessToken, String role) {
         this.email = email;
         this.accessToken = accessToken;
+        this.role = role;
+
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 
     public String getEmail() {

@@ -22,18 +22,18 @@ export class EditDepartmentComponent implements OnInit {
     this.departmentService.getDepartmentById(params['department_id']).subscribe(res => {
       console.log(res)
       this.department = res;
-      this.form.get('nomDepartement').setValue( this.department.nomDepartement);
+      this.form.get('departmentName').setValue( this.department.departmentName);
     })
     });
   }
 
   createForm() {
     this.form = this.fb.group({
-       nomDepartement: ["", Validators.required ],
+      departmentName: ["", Validators.required ],
     });
   }
   editDepartment() {
-    this.department['nomDepartement'] = this.form.value['nomDepartement']
+    this.department['departmentName'] = this.form.value['departmentName']
     this.departmentService.editDepartment(this.department)
     this.router.navigate(['/departments'])
 

@@ -20,7 +20,7 @@ export class DepartmentService {
   }
 
   addDepartment(department:Department) {
-   this.http.post<Department>(this.url,department).subscribe()
+   this.http.post<Department>(this.url+"addDepartment",department).subscribe()
   }
   deleteDepartment(department_id:number) {
     this.http.delete(this.url+department_id).subscribe()
@@ -31,7 +31,11 @@ export class DepartmentService {
   }
 
   editDepartment(department:Department) {
-    this.http.put(this.url+department.departementId,department).subscribe()
+    this.http.put(this.url+department.departmentId,department).subscribe()
   }
 
+  
+  AffectToDepartment(departmentid:number,userid:number) {
+     this.http.get(this.url+"AffectToDepartment/"+userid+"/"+departmentid).subscribe()
+  }
 }

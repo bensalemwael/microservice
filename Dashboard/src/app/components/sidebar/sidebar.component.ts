@@ -25,6 +25,14 @@ export class SidebarComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
+    var role = localStorage.getItem("role");
+
+/* values.forEach(values, function(item, i) {
+console.log(item)
+
+});
+ */
+
     this.menuItems = ROUTES.filter(menuItem => menuItem);
     this.router.events.subscribe((event) => {
       this.isCollapsed = true;

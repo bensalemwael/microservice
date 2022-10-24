@@ -24,6 +24,26 @@ services:
       MYSQL_DATABASE: erp_product
       MYSQL_PASSWORD: root
       MYSQL_ROOT_PASSWORD: root
+  vendor:
+    container_name: Microservice_Vendor
+    build: microservice_vendor
+    restart: always
+    ports:
+      - 8087:8087
+    depends_on:
+      - mysqldb_vendor
+  mysqldb_vendor:
+    container_name: Mysql_Vendor
+    image: "mysql:latest"
+    # restart: always
+    ports:
+      - 3305:3305
+    environment:
+      MYSQL_DATABASE: erp_vendor
+      MYSQL_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_TCP_PORT: 3305
+
   auth:
     container_name: Microservice_Auth
     build: microservice_auth

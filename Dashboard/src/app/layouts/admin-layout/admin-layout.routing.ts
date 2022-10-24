@@ -23,6 +23,7 @@ import { EditEventComponent } from 'src/app/pages/events/edit-event/edit-event.c
 import { PartnersComponent } from 'src/app/pages/partners/partners.component';
 import { AddPartnerComponent } from 'src/app/pages/partners/add-partner/add-partner.component';
 import { EditPartnerComponent } from 'src/app/pages/partners/edit-partner/edit-partner.component';
+import { AddUserComponent } from 'src/app/pages/users/add-user/add-user.component';
 
 export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard',      component: DashboardComponent },
@@ -31,6 +32,8 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'icons',          component: IconsComponent },
     { path: 'maps',           component: MapsComponent },
     { path: 'users',          component: UsersComponent },
+    { path: 'add_user',          component: AddUserComponent },
+
     { path: 'absences',       component: AbsencesComponent },
     { path: 'add_absence',    component: AddAbsenceComponent },
     { path: 'departments',    component: DepartmentsComponent },

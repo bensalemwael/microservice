@@ -32,19 +32,19 @@
                                 <th scope="row">
                                     <div class="media align-items-center">
                                         <div class="media-body">
-                                            <span class="mb-0 text-sm">{{department.departementId}}</span>
+                                            <span class="mb-0 text-sm">{{department.departmentId}}</span>
                                         </div>
                                     </div>
                                 </th>
                                 <td>
-                                    {{department.nomDepartement}}
+                                    {{department.departmentName}}
                                 </td>
                                 <td>
-                                    <div class="text-right" (click)="editDepartment(department.departementId)">
-                                        <button class="btn btn-info"> edit
+                                    <div class="text-right">
+                                        <button class="btn btn-info"  (click)="editDepartment(department.departmentId)"> edit
                                         </button>
                                         <button class="btn btn-danger"
-                                            (click)="deleteDepartment(department.departementId)"> delete</button>
+                                            (click)="deleteDepartment(department.departmentId)"> delete</button>
                                     </div>
                                 </td>
                             </tr>

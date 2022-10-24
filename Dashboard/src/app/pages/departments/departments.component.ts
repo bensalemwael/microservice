@@ -24,7 +24,7 @@ export class DepartmentsComponent implements OnInit {
   
   deleteDepartment(department_id:number) {
     this.departmentService.deleteDepartment(department_id)
-    this.departments = this.departments.filter(dep => dep.departementId != department_id)
+    this.departments = this.departments.filter(dep => dep.departmentId != department_id)
   }
 
   editDepartment(department_id:number) {
