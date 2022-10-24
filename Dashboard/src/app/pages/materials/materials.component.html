@@ -1,0 +1,68 @@
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+    <div class="container-fluid">
+        <div class="header-body">
+        </div>
+    </div>
+</div>
+<!-- Page content -->
+<div class="container-fluid mt--7">
+    <!-- Table -->
+    <div class="row">
+        <div class="col">
+            <div class="card shadow">
+                <div class="card-header border-0">
+                    <h3 class="mb-0">Partner</h3>
+                    <a class="nav-link" routerLink="/add_partner">
+                        <button type="button" class="btn btn-success">Add Partner</button>
+                    </a>
+                </div>
+                <div class="table-responsive">
+                    <table class="table align-items-center table-flush">
+
+                        <thead class="thead-light">
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">budget</th>
+                                <th scope="col">percentage</th>
+                                <th scope="col">starting_date</th>
+                                <th scope="col" class="text-right">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let partner of partners;">
+                                <th scope="row">
+                                    <div class="media align-items-center">
+                                        <div class="media-body">
+                                            <span class="mb-0 text-sm">{{partner.id}}</span>
+                                        </div>
+                                    </div>
+                                </th>
+                                <td>
+                                    {{partner.name}}
+                                </td>
+                                <td>
+                                    {{partner.budget}}
+                                </td>
+                                <td>
+                                    {{partner.percentage}}
+                                </td>
+                                <td>
+                                    {{partner.starting_date}}
+                                </td>
+                                <td>
+                                    <div class="text-right">
+                                        <button class="btn btn-info" (click)="editPartner(partner.id)"> edit
+                                        </button>
+                                        <button class="btn btn-danger" (click)="deletePartner(partner.id)">
+                                            delete</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

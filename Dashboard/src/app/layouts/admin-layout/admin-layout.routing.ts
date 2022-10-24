@@ -23,6 +23,8 @@ import { EditEventComponent } from 'src/app/pages/events/edit-event/edit-event.c
 import { PartnersComponent } from 'src/app/pages/partners/partners.component';
 import { AddPartnerComponent } from 'src/app/pages/partners/add-partner/add-partner.component';
 import { EditPartnerComponent } from 'src/app/pages/partners/edit-partner/edit-partner.component';
+import { VendorsComponent } from 'src/app/pages/vendors/vendors.component';
+import { AddVendorComponent } from 'src/app/pages/vendors/add-vendor/add-vendor.component';
 
 export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard',      component: DashboardComponent },
@@ -52,6 +54,11 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'add_category',   component: AddCategoriesComponent },
     { path: 'products',       component: ListProductComponent },
 
-    
+    { path: 'vendors',       component: VendorsComponent },
+    { path: 'add_vendor',       component: AddVendorComponent },
+    { path: 'edit_vendor/:id',       component: AddVendorComponent },
+
+    { path: 'vendors',       component: VendorsComponent },
+
 
 ];
