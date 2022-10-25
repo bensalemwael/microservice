@@ -1,0 +1,65 @@
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+    <div class="container-fluid">
+        <div class="header-body">
+        </div>
+    </div>
+</div>
+
+<!-- Page content -->
+<div class="container-fluid mt--7">
+    <!-- Table -->
+    <div class="row">
+        <div class="col">
+            <div class="card shadow">
+                <div class="card-header border-0">
+                    <h3 class="mb-0">Edit Insurance</h3>
+                </div>
+                <form #FAddInsurance="ngForm" (ngSubmit)="onSubmit()">
+                    <div class="row">
+                        <div class="col-md-6" style="margin: auto;">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="type" placeholder="type"
+                                    [(ngModel)]="insurance.type" name="type" required #fn="ngModel">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6" style="margin: auto;">
+                            <div class="form-group">
+                                <input type="date" class="form-control" id="start_date" placeholder="start_date"
+                                    [(ngModel)]="insurance.start_date" name="start_date" required #fn="ngModel">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6" style="margin: auto;">
+                            <div class="form-group">
+                                <input type="date" class="form-control" id="end_date" placeholder="end_date"
+                                    [(ngModel)]="insurance.end_date" name="end_date" required #fn="ngModel">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6" style="margin: auto;">
+                            <label>Car </label>
+                            <select name="car" [(ngModel)]="carId" #fn="ngModel">
+                                <option value="" selected name="carId"></option>
+                                <option *ngFor="let car of cars" [value]="car.id">
+                                    {{car.reference}}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6" style="margin: auto;">
+                            <div class="form-group" style="display: flex; justify-content: center;">
+                                <button class="btn btn-success" [disabled]="FAddInsurance.invalid">Save</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

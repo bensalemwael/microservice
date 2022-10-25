@@ -27,8 +27,8 @@ export class InsuranceService {
     return this.http.delete(this.url+ id);
   }
 
-  updateInsurance(insurance: Insurance) {
-    return this.http.put(this.url, insurance);
+  updateInsurance(insurance: Insurance,carId) {
+    return this.http.put(this.url+carId, insurance);
   }
 
   getInsurance(id: number): Observable<Insurance> {

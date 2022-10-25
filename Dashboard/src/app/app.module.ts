@@ -44,6 +44,7 @@ import { AddCarComponent } from './pages/cars/add-car/add-car.component';
 import { EditCarComponent } from './pages/cars/edit-car/edit-car.component';
 import { InsurencesComponent } from './pages/insurences/insurences.component';
 import { AddInsuranceComponent } from './pages/insurences/add-insurance/add-insurance.component';
+import { EditInsuranceComponent } from './pages/insurences/edit-insurance/edit-insurance.component';
 
 
 @NgModule({
@@ -93,7 +94,8 @@ import { AddInsuranceComponent } from './pages/insurences/add-insurance/add-insu
     AddCarComponent,
     EditCarComponent,
     InsurencesComponent,
-    AddInsuranceComponent
+    AddInsuranceComponent,
+    EditInsuranceComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -27,8 +27,6 @@ export class AddInsuranceComponent implements OnInit {
   onSubmit() {
     this.insuranceService.addInsurance(this.insurance,this.carId).subscribe(data =>
       this.route.navigate(['/insurances']))}
- 
 
-    
   };
 

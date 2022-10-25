@@ -28,6 +28,6 @@ public class Insurance {
     @Column
     private Date end_date;
 
-    @OneToOne()
+    @OneToOne(cascade = CascadeType.REMOVE, orphanRemoval = true)
     private Car car;
 }

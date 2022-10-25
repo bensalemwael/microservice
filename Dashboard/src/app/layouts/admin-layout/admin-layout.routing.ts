@@ -35,6 +35,7 @@ import { AddCarComponent } from 'src/app/pages/cars/add-car/add-car.component';
 import { EditCarComponent } from 'src/app/pages/cars/edit-car/edit-car.component';
 import { InsurencesComponent } from 'src/app/pages/insurences/insurences.component';
 import { AddInsuranceComponent } from 'src/app/pages/insurences/add-insurance/add-insurance.component';
+import { EditInsuranceComponent } from 'src/app/pages/insurences/edit-insurance/edit-insurance.component';
 
 export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard',      component: DashboardComponent },
@@ -80,6 +81,7 @@ export const AdminLayoutRoutes: Routes = [
 
     { path: 'insurances',    component: InsurencesComponent },
     { path: 'add_insurance',    component: AddInsuranceComponent },
+    { path: 'edit_insurance/:id',    component: EditInsuranceComponent },
 
 
 ];

@@ -25,7 +25,7 @@ public class Car {
     @Column
     private String nbr_horses ;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.REMOVE, orphanRemoval = true)
     @JsonBackReference
     private Insurance insurance;
 }
