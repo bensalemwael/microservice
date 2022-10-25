@@ -54,6 +54,14 @@ public class SpringCloudConfig {
                         .uri("http://marketing:8083/")
                         .id("partnerModule"))
 
+//Microservice marketing
+                .route(r -> r.path("/cars/**")
+                        .uri("http://car:8089/")
+                        .id("carsModule"))
+                .route(r -> r.path("/insurances/**")
+                        .uri("http://car:8089/")
+                        .id("insuranceModule"))
+
 //Microservice facture
                 .route(r -> r.path("/factures/**")
                         .uri("http://facture:3000/")

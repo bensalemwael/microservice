@@ -1,0 +1,68 @@
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+    <div class="container-fluid">
+        <div class="header-body">
+        </div>
+    </div>
+</div>
+<!-- Page content -->
+<div class="container-fluid mt--7">
+    <!-- Table -->
+    <div class="row">
+        <div class="col">
+            <div class="card shadow">
+                <div class="card-header border-0">
+                    <h3 class="mb-0">Vendors</h3>
+                    <a class="nav-link" routerLink="/add_vendor">
+                        <button type="button" class="btn btn-success">Add Vendor</button>
+                    </a>
+                </div>
+                <div class="table-responsive">
+                    <table class="table align-items-center table-flush">
+
+                        <thead class="thead-light">
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">First Name</th>
+                                <th scope="col">Last Name</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Location</th>
+                                <th scope="col" class="text-right">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let vendor of vendors;">
+                                <th scope="row">
+                                    <div class="media align-items-center">
+                                        <div class="media-body">
+                                            <span class="mb-0 text-sm">{{vendor.vendorId}}</span>
+                                        </div>
+                                    </div>
+                                </th>
+                                <td>
+                                    {{vendor.firstName}}
+                                </td>
+                                <td>
+                                    {{vendor.lastName}}
+                                </td>
+                                <td>
+                                    {{vendor.email}}
+                                </td>
+                                <td>
+                                    {{vendor.location}}
+                                </td>
+                                <td>
+                                    <div class="text-right">
+                                        <button class="btn btn-info" (click)="editVendor(vendor.vendorId)"> edit
+                                        </button>
+                                        <button class="btn btn-danger" (click)="deleteVendor(vendor.vendorId)">
+                                            delete</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

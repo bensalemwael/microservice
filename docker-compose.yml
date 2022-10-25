@@ -101,6 +101,25 @@ services:
       MYSQL_PASSWORD: root
       MYSQL_ROOT_PASSWORD: root
       MYSQL_TCP_PORT: 3309
+  car:
+    container_name: Microservice_Car
+    build: microservice_car
+    restart: always
+    ports:
+      - 8089:8089
+    depends_on:
+      - mysqldb_car
+  mysqldb_car:
+    container_name: Mysql_Car
+    image: "mysql:latest"
+    # restart: always
+    ports:
+      - 3304:3304
+    environment:
+      MYSQL_DATABASE: erp_car
+      MYSQL_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_TCP_PORT: 3304  
   facture:
     container_name: Microservice_Facture_Node
     build: node_microservice

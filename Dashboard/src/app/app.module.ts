@@ -33,6 +33,17 @@ import { EditEventComponent } from './pages/events/edit-event/edit-event.compone
 import { PartnersComponent } from './pages/partners/partners.component';
 import { AddPartnerComponent } from './pages/partners/add-partner/add-partner.component';
 import { EditPartnerComponent } from './pages/partners/edit-partner/edit-partner.component';
+import { VendorsComponent } from './pages/vendors/vendors.component';
+import { AddVendorComponent } from './pages/vendors/add-vendor/add-vendor.component';
+import { EditVendorComponent } from './pages/vendors/edit-vendor/edit-vendor.component';
+import { MaterialsComponent } from './pages/materials/materials.component';
+import { AddMaterialComponent } from './pages/materials/add-material/add-material.component';
+import { EditMaterialComponent } from './pages/materials/edit-material/edit-material.component';
+import { CarsComponent } from './pages/cars/cars.component';
+import { AddCarComponent } from './pages/cars/add-car/add-car.component';
+import { EditCarComponent } from './pages/cars/edit-car/edit-car.component';
+import { InsurencesComponent } from './pages/insurences/insurences.component';
+import { AddInsuranceComponent } from './pages/insurences/add-insurance/add-insurance.component';
 
 
 @NgModule({
@@ -71,7 +82,18 @@ import { EditPartnerComponent } from './pages/partners/edit-partner/edit-partner
     EditEventComponent,
     PartnersComponent,
     AddPartnerComponent,
-    EditPartnerComponent
+    EditPartnerComponent,
+    VendorsComponent,
+    AddVendorComponent,
+    EditVendorComponent,
+    MaterialsComponent,
+    AddMaterialComponent,
+    EditMaterialComponent,
+    CarsComponent,
+    AddCarComponent,
+    EditCarComponent,
+    InsurencesComponent,
+    AddInsuranceComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import Chart from 'chart.js';
+import { CategoryService } from 'src/app/services/category.service';
+import { EventService } from 'src/app/services/event.service';
+import { ProductService } from 'src/app/services/product.service';
+import { UserService } from 'src/app/services/user.service';
 
 // core components
 import {
@@ -21,6 +25,13 @@ export class DashboardComponent implements OnInit {
   public salesChart;
   public clicked: boolean = true;
   public clicked1: boolean = false;
+
+  users : number ;
+  products : number;
+  events : number ;
+  categories : number ;
+
+  constructor(private userService : UserService ,private productService : ProductService ,private categoryService : CategoryService ,private eventService : EventService){}
 
   ngOnInit() {
 
@@ -49,6 +60,21 @@ export class DashboardComponent implements OnInit {
 			options: chartExample1.options,
 			data: chartExample1.data
 		});
+
+
+    this.userService.getUsers().subscribe(data => {
+      this.users = data.length
+    })
+    this.productService.getProducts().subscribe(data => {
+      this.products = data.length
+    })
+    this.eventService.getEvents().subscribe(data => {
+      this.events = data.length
+    })
+    this.categoryService.getCategories().subscribe(data => {
+      this.categories = data.length
+    })
+
   }
 
 

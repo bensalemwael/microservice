@@ -24,6 +24,17 @@ import { PartnersComponent } from 'src/app/pages/partners/partners.component';
 import { AddPartnerComponent } from 'src/app/pages/partners/add-partner/add-partner.component';
 import { EditPartnerComponent } from 'src/app/pages/partners/edit-partner/edit-partner.component';
 import { AddUserComponent } from 'src/app/pages/users/add-user/add-user.component';
+import { VendorsComponent } from 'src/app/pages/vendors/vendors.component';
+import { AddVendorComponent } from 'src/app/pages/vendors/add-vendor/add-vendor.component';
+import { EditVendorComponent } from 'src/app/pages/vendors/edit-vendor/edit-vendor.component';
+import { MaterialsComponent } from 'src/app/pages/materials/materials.component';
+import { AddMaterialComponent } from 'src/app/pages/materials/add-material/add-material.component';
+import { EditMaterialComponent } from 'src/app/pages/materials/edit-material/edit-material.component';
+import { CarsComponent } from 'src/app/pages/cars/cars.component';
+import { AddCarComponent } from 'src/app/pages/cars/add-car/add-car.component';
+import { EditCarComponent } from 'src/app/pages/cars/edit-car/edit-car.component';
+import { InsurencesComponent } from 'src/app/pages/insurences/insurences.component';
+import { AddInsuranceComponent } from 'src/app/pages/insurences/add-insurance/add-insurance.component';
 
 export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard',      component: DashboardComponent },
@@ -55,6 +66,20 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'add_category',   component: AddCategoriesComponent },
     { path: 'products',       component: ListProductComponent },
 
-    
+    { path: 'vendors',    component: VendorsComponent },
+    { path: 'add_vendor',    component: AddVendorComponent },
+    { path: 'edit_vendor/:id',    component: EditVendorComponent },
+
+    { path: 'materials',    component: MaterialsComponent },
+    { path: 'add_material',    component: AddMaterialComponent },
+    { path: 'edit_material/:id',    component: EditMaterialComponent },
+
+    { path: 'cars',    component: CarsComponent },
+    { path: 'add_car',    component: AddCarComponent },
+    { path: 'edit_car/:id',    component: EditCarComponent },
+
+    { path: 'insurances',    component: InsurencesComponent },
+    { path: 'add_insurance',    component: AddInsuranceComponent },
+
 
 ];

@@ -1,0 +1,77 @@
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+    <div class="container-fluid">
+        <div class="header-body">
+
+            <div class="input-group input-group-rounded input-group-merge">
+                <input type="search" class="form-control form-control-rounded form-control-prepended"
+                    aria-label="Search" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;
+                  Start searching ...">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        <span class="fa fa-search"></span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- Page content -->
+<div class="container-fluid mt--7">
+    <!-- Table -->
+    <div class="row">
+        <div class="col">
+            <div class="card shadow">
+                <div class="card-header border-0">
+                    <h3 class="mb-0">cars</h3>
+                    <a class="nav-link" routerLink="/add_car">
+                        <button type="button" class="btn btn-success">Add Car</button>
+                    </a>
+
+                </div>
+                <div class="table-responsive">
+                    <table class="table align-items-center table-flush">
+
+                        <thead class="thead-light">
+                            <tr>
+                                <th scope="col">id</th>
+                                <th scope="col">reference</th>
+                                <th scope="col">nbr_horses</th>
+                                <th scope="col">Action</th>
+
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let car of cars | filter:searchText">
+
+                                <td>
+                                    {{car.id}}
+                                </td>
+                                <td>
+                                    {{car.reference}}
+                                </td>
+                                <td>
+                                    {{car.nbr_horses}}
+                                </td>
+                                <td>
+                                    <div>
+                                        <a href="javascript:void(0)" class="mx-2">
+                                            <button class="btn btn-info" (click)="updateCar(car.id)">
+                                                edit</button>
+                                        </a>
+                                        <a href="javascript:void(0)" class="mx-2">
+                                            <button class="btn btn-danger" (click)="deleteCar(car.id)">
+                                                delete</button>
+                                        </a>
+                                    </div>
+                                </td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

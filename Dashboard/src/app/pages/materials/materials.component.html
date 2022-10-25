@@ -1,0 +1,72 @@
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+    <div class="container-fluid">
+        <div class="header-body">
+        </div>
+    </div>
+</div>
+<!-- Page content -->
+<div class="container-fluid mt--7">
+    <!-- Table -->
+    <div class="row">
+        <div class="col">
+            <div class="card shadow">
+                <div class="card-header border-0">
+                    <h3 class="mb-0">Materials</h3>
+                    <a class="nav-link" routerLink="/add_material">
+                        <button type="button" class="btn btn-success">Add Material</button>
+                    </a>
+                </div>
+                <div class="table-responsive">
+                    <table class="table align-items-center table-flush">
+
+                        <thead class="thead-light">
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">name</th>
+                                <th scope="col">quantity</th>
+                                <th scope="col">size</th>
+                                <th scope="col">type</th>
+                                <th scope="col">price</th>
+                                <th scope="col" class="text-right">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let material of materials;">
+                                <th scope="row">
+                                    <div class="media align-items-center">
+                                        <div class="media-body">
+                                            <span class="mb-0 text-sm">{{material.materialId}}</span>
+                                        </div>
+                                    </div>
+                                </th>
+                                <td>
+                                    {{material.name}}
+                                </td>
+                                <td>
+                                    {{material.quantity}}
+                                </td>
+                                <td>
+                                    {{material.size}}
+                                </td>
+                                <td>
+                                    {{material.type}}
+                                </td>
+                                <td>
+                                    {{material.price}}
+                                </td>
+                                <td>
+                                    <div class="text-right">
+                                        <button class="btn btn-info" (click)="editMaterial(material.materialId)"> edit
+                                        </button>
+                                        <button class="btn btn-danger" (click)="deleteMaterial(material.materialId)">
+                                            delete</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
