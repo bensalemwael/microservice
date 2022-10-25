@@ -34,10 +34,10 @@ public class UserController {
     }
 
 
-    @GetMapping("/{user-id}")
+    @GetMapping("/{email}")
     @ResponseBody
-    public User findById(@PathVariable("user-id") Long userId) {
-        return userRepository.findById(userId).orElse(null);
+    public User findByEmail(@PathVariable("email") String email) {
+        return userRepository.findByEmail(email).orElse(null);
     }
 
     @PutMapping("/AffectToDepartment/{user-id}/{department-id}")

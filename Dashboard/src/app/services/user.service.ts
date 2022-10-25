@@ -20,7 +20,9 @@ export class UserService {
   getUsers() : Observable<User[]> {
     return this.http.get<User[]>(this.url);
   }
-
+  getUserById(email) :  Observable<User> {
+    return this.http.get<User>(this.url+email);
+  }
   deleteUser(user_id:number) {
     return this.http.delete(this.url+user_id).subscribe()
   }

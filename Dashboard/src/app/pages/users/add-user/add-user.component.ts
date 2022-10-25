@@ -39,12 +39,13 @@ export class AddUserComponent implements OnInit {
     this.user.departementid=this.departmentId
 
      this.userService.addUser(this.user).subscribe(data =>
-      {    
-        this.route.navigate(['/users']);
+      {   
+        console.log(data["userId"]) 
+        this.departmentService.AffectToDepartment(this.departmentId,data["userId"]);
+       // this.route.navigate(['/users']);
+
     }
-  /*     this.departmentService.AffectToDepartment(this.departmentId,this.user.userId).subscribe(res => {
-        console.log(res)
-        }) */
+      
       )
 
    

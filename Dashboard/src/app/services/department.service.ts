@@ -36,6 +36,9 @@ export class DepartmentService {
 
   
   AffectToDepartment(departmentid:number,userid:number) {
-     this.http.get(this.url+"AffectToDepartment/"+userid+"/"+departmentid).subscribe()
+    console.log(userid)
+    console.log(departmentid)
+     this.http.post(this.url+"affectUserToDepartment/"+userid+"/"+departmentid,{}).subscribe()
   }
+ 
 }

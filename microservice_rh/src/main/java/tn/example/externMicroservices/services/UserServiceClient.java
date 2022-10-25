@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import tn.example.externMicroservices.models.User;
 
 
-@FeignClient(name = "user-microservice",url = "http://localhost:8888/users")
+@FeignClient(name = "auth-microservice",url = "http://auth:8085/users")
 public interface UserServiceClient {
 
     @GetMapping("/{user_id}")
