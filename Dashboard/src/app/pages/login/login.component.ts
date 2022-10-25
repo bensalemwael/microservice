@@ -33,9 +33,9 @@ export class LoginComponent implements OnInit, OnDestroy {
         this.userService.login( this.form.value['email'], this.form.value['password']).subscribe(res => {
           console.log(res)
           localStorage.setItem("token",res["accessToken"])
-          localStorage.setItem("role",res["role"])
-          console.log(res)
-          this.route.navigate(['/dashboard']);
+          localStorage.setItem("email",res["email"])
+
+          this.route.navigate(['/user-profile']);
           this.error = ""
         },(err) => {
           this.error = "check email or password"

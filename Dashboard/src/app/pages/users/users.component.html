@@ -47,14 +47,22 @@
                                     {{user.role}}
                                 </td>
                                 <td>
-                                    {{user.department}}
+                                    <div *ngFor="let d of departments">
+                                        <div *ngIf="d.departmentId===user.departementid">
+                                            {{d.departmentName}}
+                                        </div>
+                                    </div>
+
                                 </td>
                                 <td>
                                     <div class="text-right">
-                                        <button class="btn btn-info"> edit
+                                        <button class="btn btn-info"> Edit
+                                        </button>
+                                  
+                                        <button class="btn btn-info" (click)="addabsence(user.userId)"> Add absence
                                         </button>
                                         <button class="btn btn-danger" (click)="deleteUser(user.userId)">
-                                            delete</button>
+                                            Delete</button>
                                     </div>
                                 </td>
                             </tr>

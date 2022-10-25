@@ -1,16 +1,27 @@
 package tn.example.security.auth;
 
 public class AuthResponse {
+    private Long userId;
+
     private String email;
     private String accessToken;
     private String role;
 
     public AuthResponse() { }
-    public AuthResponse(String email, String accessToken, String role) {
+    public AuthResponse(String email, String accessToken, String role, Long userId) {
         this.email = email;
         this.accessToken = accessToken;
         this.role = role;
+        this.userId = userId;
 
+    }
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
     public String getRole() {

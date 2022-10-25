@@ -94,65 +94,72 @@
       <!-- Divider -->
       <hr class="my-3">
       <!-- Heading -->
-      <ul class="navbar-nav mb-md-3">
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/users">
-            <i class="ni ni-single-02"></i> Users
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/departments">
-            <i class="ni ni-single-02"></i> Departments
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/events">
-            <i class="ni ni-single-02"></i> Events
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/partners">
-            <i class="ni ni-single-02"></i> Partners
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/cars">
-            <i class="ni ni-single-02"></i> Cars
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/insurances">
-            <i class="ni ni-single-02"></i> Insurance
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/vendors">
-            <i class="ni ni-single-02"></i> Supplier
-          </a>
-        </li>
 
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/materials">
-            <i class="ni ni-single-02"></i> Material
-          </a>
-        </li>
+      <div *ngIf="role==='RH'">
+        <ul class="navbar-nav mb-md-3">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/users">
+              <i class="ni ni-single-02"></i> Users
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/departments">
+              <i class="ni ni-single-02"></i> Departments
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/events">
+              <i class="ni ni-single-02"></i> Events
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/partners">
+              <i class="ni ni-single-02"></i> Partners
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/cars">
+              <i class="ni ni-single-02"></i> Cars
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/insurances">
+              <i class="ni ni-single-02"></i> Insurance
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/vendors">
+              <i class="ni ni-single-02"></i> Supplier
+            </a>
+          </li>
 
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/absences">
-            <i class="ni ni-time-alarm"></i> Absences
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/categories">
-            <i class="ni ni-time-alarm"></i> Categories
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/products">
-            <i class="ni ni-time-alarm"></i> Products
-          </a>
-        </li>
-      </ul>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/materials">
+              <i class="ni ni-single-02"></i> Material
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/absences">
+              <i class="ni ni-time-alarm"></i> Absences
+            </a>
+
+          </li>
+          <div *ngIf="role==='Employee'">
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/categories">
+                <i class="ni ni-time-alarm"></i> Categories
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/products">
+                <i class="ni ni-time-alarm"></i> Products
+              </a>
+            </li>
+
+        </ul>
+      </div>
+
 
     </div>
   </div>
